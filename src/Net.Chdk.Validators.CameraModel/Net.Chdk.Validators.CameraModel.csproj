@@ -81,6 +81,10 @@
       <Project>{34f5942a-de8d-4db2-b7d4-2bb77cddff3d}</Project>
       <Name>Net.Chdk.Model.CameraModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Net.Chdk.Validators.Base\src\Net.Chdk.Validators.Base\Net.Chdk.Validators.Base.csproj">
+      <Project>{080D6A9C-DCBD-4930-971C-1061031C1A8F}</Project>
+      <Name>Net.Chdk.Validators.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Net.Chdk.Validators.Core\src\Net.Chdk.Validators.Core\Net.Chdk.Validators.Core.csproj">
       <Project>{850646a6-01ce-48d5-9868-0d1cfc4f48d5}</Project>
       <Name>Net.Chdk.Validators.Core</Name>

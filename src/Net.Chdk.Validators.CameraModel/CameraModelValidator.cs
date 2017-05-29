@@ -6,29 +6,15 @@ using System.Linq;
 namespace Net.Chdk.Validators.CameraModel
 {
     [Obsolete]
-    sealed class CameraModelValidator : IValidator<CameraModelInfo>
+    sealed class CameraModelValidator : Validator<CameraModelInfo>
     {
-        public void Validate(CameraModelInfo cameraModel, string basePath)
+        protected override void DoValidate(CameraModelInfo cameraModel, string basePath)
         {
-            if (cameraModel == null)
-                throw new ArgumentNullException(nameof(cameraModel));
-
 #if METADATA
             Validate(cameraModel.Version);
 #endif
             Validate(cameraModel.Names);
         }
-
-#if METADATA
-        private static void Validate(Version version)
-        {
-            if (version == null)
-                throw new ValidationException("Null version");
-
-            if (version.Major < 1 || version.Minor < 0)
-                throw new ValidationException("Invalid version");
-        }
-#endif
 
         private static void Validate(string[] names)
         {
