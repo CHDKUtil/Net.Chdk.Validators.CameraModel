@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace Net.Chdk.Validators.CameraModel
 {
+    [Obsolete]
     sealed class CameraModelValidator : IValidator<CameraModelInfo>
     {
         public void Validate(CameraModelInfo cameraModel, string basePath)
