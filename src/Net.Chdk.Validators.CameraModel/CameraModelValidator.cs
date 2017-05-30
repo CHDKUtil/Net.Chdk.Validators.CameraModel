@@ -8,7 +8,7 @@ namespace Net.Chdk.Validators.CameraModel
     [Obsolete]
     sealed class CameraModelValidator : Validator<CameraModelInfo>
     {
-        protected override void DoValidate(CameraModelInfo cameraModel, string basePath)
+        protected override void DoValidate(CameraModelInfo cameraModel, string basePath, IProgress<double> progress)
         {
 #if METADATA
             Validate(cameraModel.Version);
