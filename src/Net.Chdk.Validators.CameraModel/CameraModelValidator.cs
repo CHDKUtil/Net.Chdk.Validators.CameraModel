@@ -2,13 +2,14 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Threading;
 
 namespace Net.Chdk.Validators.CameraModel
 {
     [Obsolete]
     sealed class CameraModelValidator : Validator<CameraModelInfo>
     {
-        protected override void DoValidate(CameraModelInfo cameraModel, string basePath, IProgress<double> progress)
+        protected override void DoValidate(CameraModelInfo cameraModel, string basePath, IProgress<double> progress, CancellationToken token)
         {
 #if METADATA
             Validate(cameraModel.Version);
